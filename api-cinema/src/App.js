@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import './App.css'; // Verifique se o caminho está correto
+
 
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -8,6 +8,7 @@ import NowPlaying from './Pages/Nowplaying';
 import Popular from './Pages/Popular';
 import TopRated from './Pages/TopRated';
 import Upcoming from './Pages/Upcomig';
+import './App.css'; // Verifique se o caminho está correto
 
 
 function App() {

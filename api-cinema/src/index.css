@@ -2,20 +2,31 @@
 body{
   margin: 0;
   padding:0;
-  background-color: #000000;
+  background-color: #000000 ;
 }
 *{
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif ;
   
 }
 
+:root{
+  --color1:#1a1a1a;
+  --color2:#fff;
+  --color3:#FF0000;
+}
+
 .card{
-  background-color: #1a1a1a;
+  background-color: var(--color1) ;
 }
 h5, h1, p{
-  color:#fff !important;
+  color:var(--color2) !important;
 }
 span{
-  color:red;
+  color:var(--color3);
   font-size: 2.5rem;
+}
+
+h1{
+  font-style: italic;
+  font-weight: 700;
 }

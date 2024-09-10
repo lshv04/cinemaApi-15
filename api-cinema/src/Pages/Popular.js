@@ -19,12 +19,14 @@ function formatDateToBR(dateString) {
 function Popular() {
   const { data, loading, error } = useFetch('https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1', options);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div class="spinner-border text-primary mt-5" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="container mt-4">
-      <h1 className='text-center mb-4'>Popular Movies</h1>
+      <h1 className='text-center mb-4'>Filmes Populares</h1>
       <div className="row">
         {data.results.map(movie => (
           <div className="col-md-4 mb-4 card-group" key={movie.id}>
@@ -35,7 +37,7 @@ function Popular() {
                 alt={movie.title} 
               />
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{movie.title}</h5>
+                <h5 className="card-title mb-4">{movie.title}</h5>
                 <p className="card-text">
                   Data de Lançamento: {formatDateToBR(movie.release_date)}
                 </p>
