@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+import './App.css'; // Verifique se o caminho está correto
 
 import Home from './Pages/Home';
 import About from './Pages/About';

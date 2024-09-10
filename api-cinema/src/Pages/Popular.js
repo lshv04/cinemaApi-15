@@ -1,6 +1,7 @@
-
+import React from 'react';
 import useFetch from '../Hooks/useFetch';
-
+import { format, parseISO } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 const options = {
   method: 'GET',
@@ -10,13 +11,16 @@ const options = {
   }
 };
 
+function formatDateToBR(dateString) {
+  const date = parseISO(dateString);
+  return format(date, 'dd/MM/yyyy', { locale: ptBR });
+}
+
 function Popular() {
   const { data, loading, error } = useFetch('https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1', options);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-
-
 
   return (
     <div className="container mt-4">
@@ -24,22 +28,19 @@ function Popular() {
       <div className="row">
         {data.results.map(movie => (
           <div className="col-md-4 mb-4 card-group" key={movie.id}>
-            <div className="card " >
+            <div className="card">
               <img 
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
                 className="card-img-top" 
                 alt={movie.title} 
               />
-                <div className="card-body d-flex justify-content-between flex-column">
-                <div>
-                  <h5 className="card-title">{movie.title}</h5>
-                  <p className="card-text">
-                    Release Date: {movie.release_date}
-                  </p>
-               
-                <p className="card-text">Sinópse: {movie.overview}</p>
-                </div>
-                <p className="card-text mt-4">Rating:  <span>{movie.vote_average}</span> </p>
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{movie.title}</h5>
+                <p className="card-text">
+                  Data de Lançamento: {formatDateToBR(movie.release_date)}
+                </p>
+                <p className="card-text">Synopsis: {movie.overview}</p>
+                <p className="card-text mt-auto">Nota: <span>{movie.vote_average}</span></p>
               </div>
             </div>
           </div>
