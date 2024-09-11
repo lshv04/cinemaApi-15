@@ -1,32 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-body{
+
+body {
   margin: 0;
-  padding:0;
-  background-color: #000000 ;
-}
-*{
-  font-family: "Playfair Display", serif ;
-  
+  padding: 0;
+  background-color: #181b26;
+
 }
 
-:root{
-  --color1:#1a1a1a;
-  --color2:#fff;
-  --color3:#FF0000;
+* {
+  font-family: "Playfair Display", serif;
+
 }
 
-.card{
-  background-color: var(--color1) ;
+:root {
+  --color1: #1a1a1a;
+  --color2: #fff;
+  --color3: #FF0000;
+  --color4: #ff9565;
+  --color5: #03040c;
 }
-h5, h1, p{
-  color:var(--color2) !important;
+
+.card {
+  background-color: var(--color1);
 }
-span{
-  color:var(--color3);
+
+h5,
+h1,
+p {
+  color: var(--color2) !important;
+}
+
+span {
+  color: var(--color3);
   font-size: 2.5rem;
 }
 
-h1{
+h1 {
   font-style: italic;
   font-weight: 700;
+  margin-top: 7rem;
+}
+
+.nav-link {
+
+  padding: 0;
+  color: var(--color2);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:focus {
+  color: var(--color2);
+}
+
+.nav-link:hover {
+  color: var(--color4);
+  transform: scale(1.1);
+}
+
+.sticker a {
+  text-decoration: none;
+  margin-right: 1rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--color2, );
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+
+}
+
+.sticker a:hover {
+  color: var(--color4);
+  transform: scale(1.1);
+}
+
+.navbar {
+  background-color: var(--color5);
+}
+
+.navbrand {
+  color: var(--color2);
+}
+
+.navbrand:hover {
+  color: var(--color2);
+}
+
+i {
+  color: var(--color2);
+  font-size: 2rem;
+}
+
+#tmdb {
+  color: var(--color4);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  display: inline-block;
+
+}
+
+#tmdb:hover {
+  color: var(--color2);
+  transform: scale(0.9);
+}
+
+.aboutcont {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    margin-bottom: 2rem;
+  }
+
+  .sticker a {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
 }

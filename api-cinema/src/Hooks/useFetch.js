@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const useFetch = (url, options) => {
   const [data, setData] = useState(null);
@@ -10,10 +10,10 @@ const useFetch = (url, options) => {
       try {
         const response = await fetch(url, options);
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const result = await response.json();
-        console.log('API Response:', result); // Log da resposta da API
+        console.log("API Response:", result); // Log da resposta da API
         setData(result);
       } catch (error) {
         setError(error.message);
