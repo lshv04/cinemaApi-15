@@ -4,6 +4,28 @@ import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Spinner from "react-bootstrap/Spinner";
 
+const genresMap = {
+  28: "Ação",
+  12: "Aventura",
+  16: "Animação",
+  35: "Comédia",
+  80: "Crime",
+  99: "Documentário",
+  18: "Drama",
+  10751: "Família",
+  14: "Fantasia",
+  36: "História",
+  27: "Terror",
+  10402: "Música",
+  9648: "Mistério",
+  10749: "Romance",
+  878: "Ficção Científica",
+  10770: "Cinema TV",
+  53: "Thriller",
+  10752: "Guerra",
+  37: "Faroeste",
+};
+
 const options = {
   method: "GET",
   headers: {
@@ -49,7 +71,12 @@ function Nowplaying() {
                 <p className="card-text">
                   Data de Lançamento: {formatDateToBR(movie.release_date)}
                 </p>
+                <p className="card-text">
+                  Gêneros:{" "}
+                  {movie.genre_ids.map((id) => genresMap[id]).join(", ")}
+                </p>
                 <p className="card-text">Synopsis: {movie.overview}</p>
+
                 <p className="card-text mt-auto">
                   Nota: <span>{movie.vote_average}</span>
                 </p>

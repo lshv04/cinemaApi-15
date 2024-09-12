@@ -13,7 +13,7 @@ const useFetch = (url, options) => {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
-        console.log("API Response:", result); // Log da resposta da API
+        // console.log("API Response:", result); 
         setData(result);
       } catch (error) {
         setError(error.message);
