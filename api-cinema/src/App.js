@@ -6,13 +6,13 @@ import NowPlaying from "./Pages/Nowplaying";
 import Popular from "./Pages/Popular";
 import TopRated from "./Pages/TopRated";
 import Upcoming from "./Pages/Upcomig";
-import "./App.css"; // Verifique se o caminho está correto
+import "./App.css"; 
 
 import Navbarmain from "./Compontents/Navbar";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/cinemaApiReact-15">
       <Navbarmain />
 
       <Routes>
