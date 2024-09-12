@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cinemaApi-15/static/css/main.89c0434c.css",
-    "main.js": "/cinemaApi-15/static/js/main.a075104b.js",
-    "static/js/453.a98b7138.chunk.js": "/cinemaApi-15/static/js/453.a98b7138.chunk.js",
-    "static/media/bootstrap-icons.woff?": "/cinemaApi-15/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/bootstrap-icons.woff2?": "/cinemaApi-15/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "static/media/pulp_fiction_30_anos__k5lgi4.jpg": "/cinemaApi-15/static/media/pulp_fiction_30_anos__k5lgi4.860e4912d8f235eda335.jpg",
-    "static/media/Brando-580.webp": "/cinemaApi-15/static/media/Brando-580.08161fd04b581a7b8a05.webp",
-    "static/media/logo.svg": "/cinemaApi-15/static/media/logo.bb8aa703cb92c9aa31fc1e0b17850ed9.svg",
-    "index.html": "/cinemaApi-15/index.html",
-    "main.89c0434c.css.map": "/cinemaApi-15/static/css/main.89c0434c.css.map",
-    "main.a075104b.js.map": "/cinemaApi-15/static/js/main.a075104b.js.map",
-    "453.a98b7138.chunk.js.map": "/cinemaApi-15/static/js/453.a98b7138.chunk.js.map"
+    "main.css": "/cinemaApiReact-15/static/css/main.05d7a090.css",
+    "main.js": "/cinemaApiReact-15/static/js/main.65fd42e3.js",
+    "static/js/453.a98b7138.chunk.js": "/cinemaApiReact-15/static/js/453.a98b7138.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/cinemaApiReact-15/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/cinemaApiReact-15/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/pulp_fiction_30_anos__k5lgi4.jpg": "/cinemaApiReact-15/static/media/pulp_fiction_30_anos__k5lgi4.860e4912d8f235eda335.jpg",
+    "static/media/Brando-580.webp": "/cinemaApiReact-15/static/media/Brando-580.08161fd04b581a7b8a05.webp",
+    "static/media/logo.svg": "/cinemaApiReact-15/static/media/logo.bb8aa703cb92c9aa31fc1e0b17850ed9.svg",
+    "index.html": "/cinemaApiReact-15/index.html",
+    "main.05d7a090.css.map": "/cinemaApiReact-15/static/css/main.05d7a090.css.map",
+    "main.65fd42e3.js.map": "/cinemaApiReact-15/static/js/main.65fd42e3.js.map",
+    "453.a98b7138.chunk.js.map": "/cinemaApiReact-15/static/js/453.a98b7138.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89c0434c.css",
-    "static/js/main.a075104b.js"
+    "static/css/main.05d7a090.css",
+    "static/js/main.65fd42e3.js"
   ]
 }
