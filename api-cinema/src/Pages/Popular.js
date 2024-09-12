@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import useFetch from "../Hooks/useFetch";
 import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Spinner from "react-bootstrap/Spinner";
-
 
 const genresMap = {
   28: "Ação",
@@ -27,7 +26,6 @@ const genresMap = {
   37: "Faroeste",
 };
 
-
 const options = {
   method: "GET",
   headers: {
@@ -43,10 +41,24 @@ function formatDateToBR(dateString) {
 }
 
 function Popular() {
+  // Estado para controlar a página atual
+  const [page, setPage] = useState(1);
+
+  // Atualize a URL da API com base na página atual
   const { data, loading, error } = useFetch(
-    "https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=1",
+    `https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=${page}`,
     options
   );
+
+  // Função para avançar para a próxima página
+  const nextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  // Função para voltar para a página anterior
+  const prevPage = () => {
+    if (page > 1) setPage((prevPage) => prevPage - 1);
+  };
 
   if (loading)
     return (
@@ -59,6 +71,7 @@ function Popular() {
   return (
     <div className="container mt-4">
       <h1 className="text-center mb-4">Filmes Populares</h1>
+
       <div className="row">
         {data.results.map((movie) => (
           <div className="col-md-4 mb-4 card-group" key={movie.id}>
@@ -75,7 +88,9 @@ function Popular() {
                 </p>
                 <p className="card-text">
                   Gêneros:{" "}
-                  {movie.genre_ids.map((id) => genresMap[id]).join(", ")}
+                  {movie.genre_ids
+                    .map((id) => genresMap[id])
+                    .join(", ")}
                 </p>
                 <p className="card-text">Synopsis: {movie.overview}</p>
                 <p className="card-text mt-auto">
@@ -85,6 +100,20 @@ function Popular() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Botões de Paginação */}
+      <div className="d-flex justify-content-center align-items-center m-4 gap-5">
+        <button
+          className="btn btn-secondary"
+          onClick={prevPage}
+          disabled={page === 1} // Desabilita o botão de voltar na página 1
+        >
+         <i className="bi bi-caret-left"></i>
+        </button>
+        <button className="btn btn-primary d-flex justify-content-center align-items-center" onClick={nextPage}>
+           <i className="bi bi-caret-right"></i>
+        </button>
       </div>
     </div>
   );
